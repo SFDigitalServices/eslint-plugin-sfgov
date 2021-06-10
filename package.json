@@ -12,9 +12,6 @@
       "./configs/node"
     ]
   },
-  "devDependencies": {
-    "eslint": "^7.25.0"
-  },
   "dependencies": {
     "@babel/eslint-parser": "^7.14.4",
     "eslint-config-standard": "^16.0.3",
@@ -23,13 +20,10 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1"
   },
+  "devDependencies": {
+    "eslint": "^7.25.0"
+  },
   "peerDependencies": {
-    "eslint": ">= 7",
-    "@babel/eslint-parser": "^7",
-    "eslint-config-standard": "^16",
-    "eslint-plugin-import": "^2",
-    "eslint-plugin-jest": "^24",
-    "eslint-plugin-node": "^11",
-    "eslint-plugin-promise": "^4"
+    "eslint": ">= 7"
   }
 }
