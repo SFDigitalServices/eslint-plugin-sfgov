@@ -4,6 +4,15 @@ This is the shared [eslint] configuration for the [SF Digital Services team].
 
 ## Usage
 
+0. Upgrade to npm 7:
+
+    ```sh
+    npm i -g npm@7
+    ```
+    
+    This is unfortunately necessary until we can resolve squirrelly issues
+    with peer dependencies.
+
 1. Install `eslint` and `eslint-plugin-sfgov` as dev dependencies:
 
     ```sh
