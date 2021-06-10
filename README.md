@@ -76,6 +76,17 @@ This configuration includes:
   scenarios in which promises don't need to return anything, e.g. when using
   [supertest]
 
+## Why a plugin?
+You may have noticed that this package is published as an eslint _plugin_
+rather than a "config" (i.e. `eslint-config-sfgov`). One challenge with
+[shareable configs](https://eslint.org/docs/developer-guide/shareable-configs#publishing-a-shareable-config)
+is that they can't reference their own plugins, which means that you (a
+consumer of this configuration) have to install all of them in your project.
+Popular configurations like [Airbnb's](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb#eslint-config-airbnb-1)
+suggest `npx` and/or shell one-liners to install all of their peer dependencies
+in your own `package.json`, which stinks. This configuration comes with the
+batteries included, and adds a single dev dependency to your `package.json`.
+
 [eslint]: http://eslint.org/
 [sf digital services team]: https://sfdigitalservices.github.io/
 [overrides]: https://eslint.org/docs/user-guide/configuring/configuration-files#how-do-overrides-work
