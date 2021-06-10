@@ -11,7 +11,8 @@ This is the shared [eslint] configuration for the [SF Digital Services team].
     ```
     
     This is unfortunately necessary until we can resolve squirrelly issues
-    with peer dependencies.
+    with peer dependencies. This isn't necessary if you're running Node
+    version 15 or greater, which comes with npm 7.
 
 1. Install `eslint` and `eslint-plugin-sfgov` as dev dependencies:
 
