@@ -13,7 +13,7 @@ module.exports = {
      *
      * ```js
      * const foo = 'bar'
-     * 
+     *
      * (() => {
      *   console.log(foo)
      * })()
@@ -32,7 +32,7 @@ module.exports = {
      * Uncaught TypeError: "bar" is not a function
      * ```
      */
-    'semi': ['error', 'never', {
+    semi: ['error', 'never', {
       beforeStatementContinuationChars: 'always'
     }]
   },
