@@ -49,11 +49,11 @@ eslint configuration.
 This is the "base" configuration that [includes](configs/recommended.js):
 
 - [standard] formatting rules
-- An override for the [`semi` rule] that rejects semicolons _except_ when
+- An override for the [`semi` rule][semi rule] that rejects semicolons _except_ when
   they're necessary to avoid pitfalls with [automatic semicolon insertion]
-- [`eslint:recommended`] rules
-- [Import] support and the [`plugin:import/recommended`] configuration
-- [Promise] support and the [`plugin:promise/recommended`] configuration
+- [eslint:recommended] rules
+- [Import] support and the [plugin:import/recommended] configuration
+- [Promise] support and the [plugin:promise/recommended] configuration
 
 These rules should work in any [environment][environments].
 
@@ -62,8 +62,8 @@ These rules should work in any [environment][environments].
 This configuration is intended for JavaScript that runs directly in Node, and
 [includes](configs/node.js):
 
-- [Node] support and the [`plugin:node/recommended`] configuration
-- Disabling of the [`node/no-unpublished-require`] rule
+- [Node] support and the [plugin:node/recommended] configuration
+- Disabling of the [node/no-unpublished-require] rule
 
 #### `plugin:sfgov/jest`
 
@@ -72,7 +72,7 @@ This configuration includes:
 - [Jest] support and the its
   [`plugin:jest/recommended`](https://github.com/jest-community/eslint-plugin-jest#recommended)
   configuration
-- An override that disables [`promise/always-return`] to account for testing
+- An override that disables [promise/always-return] to account for testing
   scenarios in which promises don't need to return anything, e.g. when using
   [supertest]
 
