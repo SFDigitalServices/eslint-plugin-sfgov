@@ -10,9 +10,9 @@ This is the shared [eslint] configuration for the [SF Digital Services team].
     npm i -g npm@7
     ```
     
-    This is unfortunately necessary until we can resolve squirrelly issues
-    with peer dependencies. This isn't necessary if you're running Node
-    version 15 or greater, which comes with npm 7.
+    This is unfortunately necessary until we can resolve issues with shared
+    eslint rule dependencies. This isn't necessary if you're running Node
+    version ≥15, which comes with npm 7.
 
 1. Install `eslint` and `eslint-plugin-sfgov` as dev dependencies:
 
@@ -42,6 +42,14 @@ This is the shared [eslint] configuration for the [SF Digital Services team].
 
 4. Test it! Run `npx eslint` to lint all of the known JS files in your project,
    or pass specific file paths a la `npx eslint src/**/*.js`.
+   
+    ℹ️ If the issues that your new eslint config surfaces are overwhelming, you
+    can use [eslint-nibble](https://github.com/IanVS/eslint-nibble) to get an
+    overview and focus on specific rules.
+
+    Assuming your JavaScript is committed to git, and depending on the nature
+    of your rule violations, it may also be possible to fix many (or even
+    most) of them by running eslint with the `--fix` flag.
 
 5. Add a `lint` or `lint-js` entry in the `scripts` field of your
    `package.json` that runs `eslint` on all of the relevant files in your
