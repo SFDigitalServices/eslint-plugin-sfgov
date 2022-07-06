@@ -16,15 +16,15 @@
     "releaseBranch": "main"
   },
   "dependencies": {
-    "@babel/eslint-parser": "^7.14.4",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.3.6",
+    "@babel/eslint-parser": "^7.18.2",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0"
+    "eslint-plugin-promise": "^6.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.25.0"
+    "eslint": "^8.19.0"
   },
   "peerDependencies": {
     "eslint": ">= 7"
