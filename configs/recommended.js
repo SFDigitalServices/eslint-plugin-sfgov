@@ -6,6 +6,9 @@ module.exports = {
     'plugin:promise/recommended'
   ],
   rules: {
+    // these rules are nice reminders, but not necessarily errors
+    'promise/always-return': 'warn',
+    'promise/catch-or-return': 'warn',
     /**
      * We generally don't need or want semicolons, but we should require them
      * before so-called continuation characters like "(" and "[", because
