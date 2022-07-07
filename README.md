@@ -4,20 +4,24 @@ This is the shared [eslint] configuration for the [SF Digital Services team].
 
 ## Usage
 
-0. Upgrade to npm 7:
+0. Upgrade npm (optional, but strongly recommended):
 
     ```sh
-    npm i -g npm@7
+    npm --version
     ```
     
-    This is unfortunately necessary until we can resolve issues with shared
-    eslint rule dependencies. This isn't necessary if you're running Node
-    version ≥15, which comes with npm 7.
+    If you're running npm version 6.x or earlier, you're going to have issues
+    with shared eslint rule dependencies. You can upgrade npm to the latest
+    version with:
+
+    ```sh
+    npm i -g npm@latest
+    ```
 
 1. Install `eslint` and `eslint-plugin-sfgov` as dev dependencies:
 
     ```sh
-    npm install --save-dev eslint eslint-plugin-sfgov
+    npm install --save-dev eslint@8 eslint-plugin-sfgov@latest
     ```
 
 2. Set up your eslint configuration, either in a standalone config file, e.g.
@@ -48,8 +52,8 @@ This is the shared [eslint] configuration for the [SF Digital Services team].
     overview and focus on specific rules.
 
     Assuming your JavaScript is committed to git, and depending on the nature
-    of your rule violations, it may also be possible to fix many (or even
-    most) of them by running eslint with the `--fix` flag.
+    of your rule violations, it may also be possible to fix many of them by
+    running eslint with the `--fix` flag.
 
 5. Add a `lint` or `lint-js` entry in the `scripts` field of your
    `package.json` that runs `eslint` on all of the relevant files in your
@@ -72,6 +76,7 @@ This is the "base" configuration that [includes](configs/recommended.js):
 - [eslint:recommended] rules
 - [Import] support and the [plugin:import/recommended] configuration
 - [Promise] support and the [plugin:promise/recommended] configuration
+- Setting `parserOptions.ecmaVersion` to `9` ([ECMAScript 2018](https://en.wikipedia.org/wiki/ECMAScript#9th_Edition_%E2%80%93_ECMAScript_2018))
 
 These rules should work in any [environment][environments].
 
@@ -82,6 +87,15 @@ This configuration is intended for JavaScript that runs directly in Node, and
 
 - [Node] support and the [plugin:node/recommended] configuration
 - Disabling of the [node/no-unpublished-require] rule
+
+#### `plugin:sfgov/babel`
+
+This configuration is intended for JavaScript that will be compiled with [Babel],
+and [includes](configs/babel.js):
+
+- Setting ESLint's `parser` to [@babel/eslint-parser]
+- Setting `parserOptions.sourceType` to `module`
+- Setting `parserOptions.ecmaVersion` to [2020](https://en.wikipedia.org/wiki/ECMAScript#11th_Edition_%E2%80%93_ECMAScript_2020)
 
 #### `plugin:sfgov/jest`
 
@@ -97,14 +111,15 @@ This configuration includes:
 ## Why a plugin?
 You may have noticed that this package is published as an eslint _plugin_
 rather than a "config" (i.e. `eslint-config-sfgov`). One challenge with
-[shareable configs](https://eslint.org/docs/developer-guide/shareable-configs#publishing-a-shareable-config)
+[shareable configs]
 is that they can't reference their own plugins, which means that you (a
 consumer of this configuration) have to install all of them in your project.
-Popular configurations like [Airbnb's](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb#eslint-config-airbnb-1)
+Popular configurations like [Airbnb's][eslint-config-airbnb]
 suggest `npx` and/or shell one-liners to install all of their peer dependencies
 in your own `package.json`, which stinks. This configuration comes with the
 batteries included, and adds a single dev dependency to your `package.json`.
 
+[babel]: https://babeljs.io/
 [eslint]: http://eslint.org/
 [sf digital services team]: https://sfdigitalservices.github.io/
 [overrides]: https://eslint.org/docs/user-guide/configuring/configuration-files#how-do-overrides-work
@@ -123,3 +138,6 @@ batteries included, and adds a single dev dependency to your `package.json`.
 [jest]: https://jestjs.io/
 [promise/always-return]: https://github.com/xjamundx/eslint-plugin-promise/blob/485509660ccc1901fd30040cf4e75c88922c6255/docs/rules/always-return.md#readme
 [supertest]: https://www.npmjs.com/package/supertest
+[shareable configs]: https://eslint.org/docs/developer-guide/shareable-configs#publishing-a-shareable-config
+[eslint-config-airbnb]: https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb#readme
+[@babel/eslint-parser]: https://www.npmjs.com/package/@babel/eslint-parser
