@@ -18,10 +18,10 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.25.8",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.8.3",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0"
+    "eslint-plugin-promise": "^6.6.0"
   },
   "devDependencies": {
     "eslint": "^8.57.1"
